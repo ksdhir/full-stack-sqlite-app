@@ -4,12 +4,18 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start-node": "nodemon",
+    "start-browser": "browser-sync start --proxy http://localhost:8080 --files 'public'",
+    "start": "run-p start-node start-browser"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
     "csv": "^3.1.0",
+    "express": "^4.16.3",
+    "nodemon": "^1.18.4",
+    "npm-run-all": "^4.1.3",
     "sqlite": "^3.0.0"
   }
 }
