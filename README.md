@@ -27,4 +27,4 @@ Clone this repo, then
 
  * npm install
  * npm start
- * Use latest chrome and navigate to http://localhost:3000
+ * Use latest chrome and navigate to http://localhost:8080
