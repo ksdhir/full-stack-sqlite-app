@@ -7,8 +7,8 @@ let sqlite = require('sqlite');
 
 function setupServer(db) {
 
-
-    app.use(express.static('public'));
+    // This is a test frontend - uncomment to check it out
+    // app.use(express.static('public'));
         
     app.get('/info', (req, res) => {
         res.send('Full stack example');
