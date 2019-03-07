@@ -9,7 +9,7 @@ function setupServer(db) {
 
     // This is a test frontend - uncomment to check it out
     // app.use(express.static('public'));
-        
+    
     app.get('/info', (req, res) => {
         res.send('Full stack example');
     });
@@ -26,6 +26,7 @@ function setupServer(db) {
     app.get('/streets/:street/', (req, res) => {
         let streetName = req.params.street;
         // query based on street
+	// NOTE: this is open to SQL injection attack
         db.all(`SELECT * FROM BikeRackData WHERE name = '${streetName}'`)
           .then( data => {
               res.send(data);              

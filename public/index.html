@@ -10,7 +10,7 @@
              console.log(e.target.innerHTML);
              let streetName = encodeURI(e.target.innerHTML);
 
-             fetch(`/streets/${streetName}`)
+             fetch(`streets/${streetName}`)
                  .then( response => {                     
                      return response.json();                     
                  })
@@ -35,7 +35,7 @@
 
              // we are going to use the fetch api (modern browsers only)
 
-             fetch('/streets')
+             fetch('streets')
                  .then(function(response) {
                      return response.json();
                  })
