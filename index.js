@@ -1,9 +1,8 @@
 
-let express = require('express');
-let app = express();
-
-let sqlite = require('sqlite');
-
+const sqlite3 = require('sqlite3');
+const sqlite = require('sqlite');
+const express = require('express');
+const app = express();
 
 function setupServer(db) {
 
@@ -43,11 +42,12 @@ function setupServer(db) {
     
 }
 
-sqlite.open('database.sqlite').then( db => {
-	//console.log('database opened', db);
-
-    setupServer(db);
-    //return db.all('SELECT * from TEST');
-    
-})
+sqlite.open( { 
+	filename: 'database.sqlite',
+	driver: sqlite3.Database 
+}).then( db => {
+	//console.log('database opened', db);  
+  setupServer(db);
+  //return db.all('SELECT * from TEST');  
+});
 

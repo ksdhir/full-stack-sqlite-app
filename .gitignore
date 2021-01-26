@@ -1,5 +1,7 @@
 # emacs backup files
 *~
+run.sh
+package-lock.json
 
 # Logs
 logs
